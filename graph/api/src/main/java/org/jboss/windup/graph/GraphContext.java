@@ -82,20 +82,20 @@ public interface GraphContext extends Closeable
     /**
      * Create a GraphService of given class.
      */
-    public <T extends WindupVertexFrame> GraphService<T> service(Class<T> clazz);
+    <T extends WindupVertexFrame> GraphService<T> service(Class<T> clazz);
 
     /**
      * Convenience delegation to new GraphService(this)
      */
-    public <T extends WindupVertexFrame> T getUnique(Class<T> clazz);
+    <T extends WindupVertexFrame> T getUnique(Class<T> clazz);
 
     /**
      * Convenience delegation to new GraphService(this)
      */
-    public <T extends WindupVertexFrame> Iterable<T> findAll(Class<T> clazz);
+    <T extends WindupVertexFrame> Iterable<T> findAll(Class<T> clazz);
 
     /**
      * Convenience delegation to new GraphService(this)
      */
-    public <T extends WindupVertexFrame> T create(Class<T> clazz);
+    <T extends WindupVertexFrame> T create(Class<T> clazz);
 }

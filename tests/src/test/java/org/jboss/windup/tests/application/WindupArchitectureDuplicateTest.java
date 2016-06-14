@@ -19,7 +19,7 @@ import org.jboss.windup.reporting.model.ApplicationReportModel;
 import org.jboss.windup.reporting.model.MigrationIssuesReportModel;
 import org.jboss.windup.reporting.model.ReportModel;
 import org.jboss.windup.reporting.service.ReportService;
-import org.jboss.windup.rules.apps.java.reporting.rules.CreateJarDependencyReportRuleProvider;
+import org.jboss.windup.rules.apps.java.dependencyreport.CreateDependencyReportRuleProvider;
 import org.jboss.windup.rules.apps.java.reporting.rules.CreateReportIndexRuleProvider;
 import org.jboss.windup.testutil.html.TestJarDependencyReportUtil;
 import org.jboss.windup.testutil.html.TestMigrationIssuesReportUtil;
@@ -175,7 +175,7 @@ public class WindupArchitectureDuplicateTest extends WindupArchitectureTest
     {
         GraphService<ApplicationReportModel> service = graphContext.service(ApplicationReportModel.class);
         Iterable<ApplicationReportModel> reports = service.findAllByProperty(ReportModel.TEMPLATE_PATH,
-                    CreateJarDependencyReportRuleProvider.TEMPLATE);
+                    CreateDependencyReportRuleProvider.TEMPLATE);
         for (ApplicationReportModel report : reports)
         {
             // test checks only Global Jar Dependencies report 
